@@ -9,6 +9,7 @@ import Ocean from '../assets/ocean.png'
 import Land from '../assets/land.png'
 import Warehousing from '../assets/warehousing.png'
 import Footer from './footer'
+import Cst from '../assets/cst.png'
 import 'react-tabs/style/react-tabs.css';
 
 
@@ -45,6 +46,7 @@ export default function Services() {
       <Tab>Ocean Freight</Tab>
       <Tab>Land Freight</Tab>
       <Tab>Warehousing</Tab>
+      <Tab>Custom Services</Tab>
     </TabList>
 
     <TabPanel>
@@ -64,6 +66,9 @@ Our team can help you dertermine an optimal location, obtain the right climatic 
     <TabPanel>
     <Card image={Warehousing} title='Warehousing' content='Importer or exporter, manufacturer, agriculturalist, machandise trader, antique specialist, we have a storage solution for you.'/>
 
+    </TabPanel>
+    <TabPanel>
+        <Card image={Cst} content='Songa Logistics and Trade Services rely on extensive experience in facilitating trade, to develop and deliver new Total Quality Assured services for governments, customs, authorities and standards organisations.' title='Customs Services'/> 
     </TabPanel>
   </Tabs>
              </div>

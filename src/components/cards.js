@@ -7,11 +7,11 @@ import Warehousing from '../assets/warehousing.png'
 
 const Card = ({image, title, content, route}) =>{
     return (
-        <div className='px-24 flex space-x-4' data-aos="fade-up">
-            <img src={image} className='w-2/5' alt="rty" />
-            <div className='items-center h-full justify-center mt-12 '>
-                <p className=' font-header text-6xl text-gray-700'>{title}</p>
-                <p className='text-gray-600 text-md mt-4'>{content}</p>
+        <div className='md:px-24 px-8 flex space-x-4 sm:relative' data-aos="fade-up">
+            <img src={image} className='w-full h-full md:w-2/5 md:block hidden' alt="rty" />
+            <div className='items-center h-full justify-center mt-12 sm:w-full'>
+                <p className=' font-header text-2xl md:text-6xl text-gray-700'>{title}</p>
+                <p className='text-gray-600  text-sm  md:text-md mt-4'>{content}</p>
                 <div className='py-12'>
                 <Button text='Read More'/>
                 </div>
@@ -22,15 +22,15 @@ const Card = ({image, title, content, route}) =>{
 
 const CardReverse = ({image, title, content, route}) =>{
     return (
-        <div className='px-24 flex space-x-4' data-aos="fade-up">
+        <div className='md:px-24 px-8 flex space-x-4' data-aos="fade-up">
                 <div className='items-center h-full justify-center mt-12 '>
-                <p className=' font-header text-6xl text-gray-700'>{title}</p>
-                <p className='text-gray-600 text-md mt-4'>{content}</p>
+                <p className=' font-header text-2xl md:text-6xl text-gray-700'>{title}</p>
+                <p className='text-gray-600 text-sm md:text-md mt-4'>{content}</p>
                 <div className='py-12'>
                 <Button text='Read More'/>
                 </div>
             </div>
-            <img src={image} className='w-2/5' alt="rty" />
+            <img src={image} className='w-2/5 md:block hidden' alt="rty" />
         
         </div>
     )
