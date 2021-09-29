@@ -13,7 +13,7 @@ const Card = ({image, title, content, route}) =>{
                 <p className=' font-header text-2xl md:text-6xl text-gray-700'>{title}</p>
                 <p className='text-gray-600  text-sm  md:text-md mt-4'>{content}</p>
                 <div className='py-12'>
-                <Button text='Read More'/>
+                {/* <Button text='Read More'/> */}
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@ const CardReverse = ({image, title, content, route}) =>{
                 <p className=' font-header text-2xl md:text-6xl text-gray-700'>{title}</p>
                 <p className='text-gray-600 text-sm md:text-md mt-4'>{content}</p>
                 <div className='py-12'>
-                <Button text='Read More'/>
+                {/* <Button text='Read More'/> */}
                 </div>
             </div>
             <img src={image} className='w-2/5 md:block hidden' alt="rty" />
