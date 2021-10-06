@@ -3,8 +3,8 @@ import Frontal from '../assets/frontal.gif'
 
 export default function SlideShow() {
     return (
-        <div className='px-24'>
-           <img src={Frontal} className='w-full rounded-xl' /> 
+        <div className='md:px-24 mt-12 md:mt-0'>
+           <img src={Frontal} className='w-full md:rounded-xl' /> 
         </div>
     )
 }
