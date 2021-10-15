@@ -53,8 +53,8 @@ export default function Services() {
                      <p className='absolute  h-1/3 text-center w-full text-4xl md:text-8xl text-gray-50 font-semibold justify-center'>SERVICES</p>
                  </div>
              </div>
-             <div className='py-24'>
-                 <div>
+             <div className='py-24 '>
+                 <div className='md:hidden'>
                  
     <Cardro image={Plane} title='Air Freight' content='Importer or exporter, manufacturer, agriculturalist, machandise trader, antique specialist, we have a storage solution for you.
 
