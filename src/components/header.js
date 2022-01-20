@@ -36,7 +36,9 @@ export default function Header({fixed}) {
           <img class="mr-3 md:h-20 h-10" src={Logo}/>
         </a>
         <div class="flex md:order-2 px-5 md:px-0">
-            <button type="button" class="text-white bg-my-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:block hidden">Get a quote</button>
+            <button type="button" class="text-white bg-my-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:block hidden">
+              <Link to="/contact">Get a quote</Link>
+            </button>
             <button data-collapse-toggle="mobile-menu-4" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-4" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
            <div>
