@@ -60,7 +60,7 @@ export default function Services() {
 
              </div>
             <div className="md:grid md:grid-cols-2 gap-8 place-items-center bg-white md:px-20 px-5">
-                <img src={ServiceImage} className="md:h-full md:block hidden" />
+                <img src={ServiceImage} className="md:h-full md:block hidden object-cover" />
                 <div>
                     <p className="font-semibold text-my-red md:block hidden">SERVICES</p>
                     <p className="font-extrabold deep-text text-5xl text-gray-800 md:block hidden">
