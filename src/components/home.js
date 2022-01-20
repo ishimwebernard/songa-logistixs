@@ -6,8 +6,15 @@ import Footer from './footer'
  
 export default function Home() {
     return (
-        <div>
-            <Header  />
+        <div className="relative">
+          
+       
+            <Header fixed={true} />
+            <div className="relative">
+                <Header />
+                <div className='absolute top-0 bg-white w-full h-full'>
+                    </div>
+            </div>
             <Frontal />
             <Cards />
             <Footer />

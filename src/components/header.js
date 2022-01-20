@@ -7,7 +7,7 @@ const MenuItem = ({text, link}) =>{
     return (
         <div>
             <Link to={link}>
-            <p className='font-header font-semibold text-gray-700 hover:text-gray-400 cursor-pointer'>{text}</p></Link>
+            <p class="block py-2 pr-4 pl-3 text-gray-800  rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">{text}</p></Link>
         </div>
     )
 }
@@ -16,61 +16,79 @@ const MenuItemMobile = ({text, link}) =>{
     return (
         <div>
             <Link to={link} className='border'>
-            <p className='font-header font-semibold text-gray-700 text-xl px-8 py-4'>{text}</p></Link>
+            <p class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">{text}</p></Link>
         </div>
     )
 }
 
-export default function Header({transluscent}) {
+export default function Header({fixed}) {
     const [burgerFolded, setBurgerFolded] = useState(false); 
+    var style = "border-gray-200 px-2 sm:px-4 py-5 rounded dark:bg-gray-800 w-full transluscent"
+    if(fixed){
+      style = style + " fixed z-20"
+    }
 
     return (
-           <div>
-               <div>
-               <div className={transluscent ? ' flex md:px-24 md:py-4 space-x-12 transluscent w-full bg-gray-100 bg-opacity-95':' flex md:px-24 md:py-4 space-x-12 w-full bg-gray-100 bg-opacity-95 '}>
-            
-            <img src={Logo} className='hidden md:block  md:w-1/6'/>
-            <div className='hidden md:flex  space-x-8 justify-center items-center  '>
-            <MenuItem text='Home' link='/'/>
-            <MenuItem text='About Us' link='aboutus'/>
-            <MenuItem text='Services' link='services'/>
-            <MenuItem text='Gallery' link='gallery'/>
-            <MenuItem text='Contact' link='contact'/>
-            </div>
            
-        </div>
-        <div className='w-full md:hidden absolute top-0 z-50'>
-            <div className=' w-full bg-gray-100 bg-opacity-95 grid grid-cols-3 items-center'>
-                <img src={Logo} />
-                <div></div>
-
-
-<svg 
-onClick={()=>{
-    setBurgerFolded(!burgerFolded)
-}}
-xmlns="http://www.w3.org/2000/svg" className="h-6 w-8 absolute right-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-</svg>
-
-
-
-            </div>
-            <div className={burgerFolded ? 'grid grid-cols-3':'hidden'}>
-                <div className='bg-gray-800 bg-opacity-30 w-full h-screen'></div>
-                <div className='col-span-2 bg-gray-50'>
-                <MenuItemMobile text='Home' link='/'/>
-            <MenuItemMobile text='About Us' link='aboutus'/>
-            <MenuItemMobile text='Services' link='services'/>
-            <MenuItemMobile text='Gallery' link='gallery'/>
-            <MenuItemMobile text='Contact' link='contact'/>
-                </div>
-            </div>
-
-        </div>
-               </div>
+        <nav class={style} id="nav" >
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+        <a href="#" class="flex">
+          <img class="mr-3 md:h-20 h-10" src={Logo}/>
+        </a>
+        <div class="flex md:order-2 px-5 md:px-0">
+            <button type="button" class="text-white bg-my-blue hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:block hidden">Get a quote</button>
+            <button data-collapse-toggle="mobile-menu-4" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-4" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+           <div>
+           <svg onClick={()=>{
+             setBurgerFolded(true)
+           }} class={burgerFolded ? "hidden w-6 h-6":"w-6 h-6"} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            <svg onClick={()=>{
+               setBurgerFolded(false)
+            }} class={burgerFolded ? "w-6 h-6":"hidden w-6 h-6"} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
            </div>
+          </button>
+        </div>
+        <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
+          <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+            <li>
+              <MenuItem text="Home" link="/"/>
+            </li>
+            <li>
+              <MenuItem text="About Us" link="aboutus"/>
+            </li>
+            <li>
+              <MenuItem text="Services" link="services"/>
+            </li>
+            {/* <li>
+              <MenuItem text="Gallery" link="gallery"/>
+            </li> */}
+            <li>
+              <MenuItem text="Contact" link="contact"/>
+            </li>
+          </ul>
+        </div>
+        </div>
+        <div className={burgerFolded ? "h-full ":"hidden"}>
+        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+            <li>
+              <MenuItem text="Home" link="/"/>
+            </li>
+            <li>
+              <MenuItem text="About Us" link="aboutus"/>
+            </li>
+            <li>
+              <MenuItem text="Services" link="services"/>
+            </li>
+            {/* <li>
+              <MenuItem text="Gallery" link="gallery"/>
+            </li> */}
+            <li>
+              <MenuItem text="Contact" link="contact"/>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
     )
 }
- 

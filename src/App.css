@@ -10,9 +10,30 @@
   height: 550px;
 }
 .transluscent{
-  backdrop-filter: blur(5px);
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.871)
+  );
+  backdrop-filter: blur(2rem);
+
+
+
+}
+.deep-text {
+  font-weight: 900; 
+  font-family: 'Arial Black';
+}
+.my-red {
+  color: #ED1C24;
+}
+.my-blue {
+  color: #36499F
+}
+
+.sticky {
   position: fixed;
   top: 0;
-
-
+  width: 100%
 }
